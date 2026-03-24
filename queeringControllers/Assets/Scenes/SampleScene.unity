@@ -274,7 +274,7 @@ MonoBehaviour:
   musicPostVideo1Black: {fileID: 8300000, guid: ad424703ac10cc94f81d5927e6204055, type: 3}
   midBlackScreenDuration: 1
   fadeOverlay: {fileID: 0}
-  nextSceneName: 1
+  nextSceneName: Tutorial
   silenceDuration: 1
   blackScreenDuration: 15
   fadeInDuration: 1.2
