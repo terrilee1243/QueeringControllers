@@ -275,7 +275,7 @@ MonoBehaviour:
   midBlackScreenDuration: 1
   fadeOverlay: {fileID: 0}
   typewriterText: {fileID: 1476542059}
-  nextSceneName: Tutorial
+  nextSceneName: 1
   silenceDuration: 1
   blackScreenDuration: 15
   fadeInDuration: 1.2
