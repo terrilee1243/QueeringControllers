@@ -61,6 +61,9 @@ public class StartScreenManager : MonoBehaviour
     [Tooltip("黑色淡入淡出遮罩 Image（alpha 从0到1）")]
     public Image fadeOverlay;
 
+    [Tooltip("黑屏打字机文字组件（挂在黑屏上的 TypewriterText）")]
+    public TypewriterText typewriterText;
+
     [Header("=== 场景设置 ===")]
     [Tooltip("视频播完后要加载的场景名称")]
     public string nextSceneName = "GameScene";
@@ -111,8 +114,11 @@ public class StartScreenManager : MonoBehaviour
     }
 
     // ─────────────────────────────────────────────────────────
-    /// <summary>点击 START 按钮</summary>
-    void OnStartClicked()
+    /// <summary>点击 START 按钮（按钮事件绑定用）</summary>
+    void OnStartClicked() => TriggerStart();
+
+    /// <summary>公开入口：PressAnyKey 或按钮都可调用</summary>
+    public void TriggerStart()
     {
         if (_isStarted) return;
         _isStarted = true;
@@ -141,9 +147,33 @@ public class StartScreenManager : MonoBehaviour
         startButton.gameObject.SetActive(false);
         SetFadeAlpha(1f);
         PlayBGM(musicBlackScreen);
-        yield return new WaitForSeconds(blackScreenDuration);
 
-        // 3. 黑屏阶段结束：停音乐，静默1s
+        // 3. 启动打字机（同时进行，不阻塞音乐）
+        bool typewriterDone = false;
+        if (typewriterText != null)
+        {
+            typewriterText.OnComplete = () => typewriterDone = true;
+            typewriterText.StartTyping(
+                "You are an astronaut aboard a space station where a lab experiment has escaped and become a deadly creature.\n\n" +
+                "To survive, you must collect enough energy to restore systems while avoiding the monster stalking you in the dark.\n\n" +
+                "These are 2 clips of the creature you will face."
+            );
+        }
+        else
+        {
+            typewriterDone = true;
+        }
+
+        // 4. 等黑屏时长 且 打字完成，两个条件都满足才继续
+        float blackElapsed = 0f;
+        while (blackElapsed < blackScreenDuration || !typewriterDone)
+        {
+            blackElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // 5. 黑屏阶段结束：隐藏文字，停音乐，静默
+        if (typewriterText != null) typewriterText.Hide();
         _bgmSource.Stop();
         yield return new WaitForSeconds(silenceDuration);
 
