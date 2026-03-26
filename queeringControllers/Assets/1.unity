@@ -33514,7 +33514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1506213203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33522,7 +33522,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1506213202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e8419ac5b87e4d4c8a54b6945fa11de, type: 3}
   m_Name: 
@@ -44883,6 +44883,8 @@ GameObject:
   - component: {fileID: 2020567888}
   - component: {fileID: 2020567890}
   - component: {fileID: 2020567889}
+  - component: {fileID: 2020567892}
+  - component: {fileID: 2020567893}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -45008,6 +45010,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 482691741}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!114 &2020567892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020567887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe6eaf06107a5e4293cf923c02fedf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interval: 5
+  lookBackDuration: 0.7
+  turnSpeed: 8
+--- !u!114 &2020567893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020567887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bfdbd5fbff09d445ad58a99d89cced1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookForwardDuration: 1
+  lookBackDuration: 2
+  turnSpeed: 6
 --- !u!1 &2026682877
 GameObject:
   m_ObjectHideFlags: 0
