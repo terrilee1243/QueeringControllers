@@ -33833,7 +33833,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e8419ac5b87e4d4c8a54b6945fa11de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missionImage: {fileID: 2800000, guid: dfb280fc7f040e64e8daf68002b87459, type: 3}
+  missionImage: {fileID: 2800000, guid: 22b52a3d2a2d943f1a4a2680dea8e3a6, type: 3}
   displayDuration: 10
   fadeWidth: 0.15
 --- !u!4 &1506213204

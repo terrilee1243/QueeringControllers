@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9777dca67a1f4478bfb8be683a70ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionImage: {fileID: 2800000, guid: 088995fc82a8516409b09978bd179841, type: 3}
+  instructionImage: {fileID: 2800000, guid: 3e55dc37cfc0147d4839f311c24b7878, type: 3}
   fadeWidth: 0.218
 --- !u!4 &111718543
 Transform:
